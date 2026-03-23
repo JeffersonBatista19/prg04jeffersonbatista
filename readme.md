@@ -1,0 +1,2 @@
+Rotina Next Level:
+O Rotina Next Level é uma plataforma web que utiliza conceitos de gamificação para ajudar usuários a organizarem e cumprirem suas tarefas diárias de forma mais motivadora. O objetivo é transformar a rotina em uma experiência interativa, incentivando a produtividade e a criação de hábitos saudáveis. Funcionalidades Criação de tarefas; Sistema de pontuação e níveis; Acompanhamento de progresso; Definição de metas; Recompensas virtuais por conquistas; Interface simples e intuitiva.
