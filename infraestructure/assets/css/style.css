@@ -1,0 +1,29 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #351f3d;
+    text-align: center;
+}
+
+h1 {
+    color: #53c96b;
+}
+
+h2 {
+    color:#d4c00d;
+}
+
+a {
+    color:#d4c00d;
+}
+
+p {
+    color:#fbfbfb;
+}
+
+li {
+    color:#fbfbfb;
+}
+
+audio, iframe {
+    margin-top: 20px;
+}
