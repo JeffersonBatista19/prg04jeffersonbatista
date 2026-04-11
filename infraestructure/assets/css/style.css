@@ -3,6 +3,8 @@ body {
     background-color: #0f172a;
     color: #e2e8f0;
     text-align: center;
+    margin: 0;
+    padding: 0;
 }
 
 h1 {
@@ -28,3 +30,71 @@ li {
 audio, iframe {
     margin-top: 20px;
 }
+
+/* === Tags Semânticas - Atividade 07 === */
+
+header {
+    background-color: #1e293b;
+    padding: 20px;
+    border-bottom: 3px solid #f59e0b;
+}
+
+nav {
+    margin-top: 12px;
+}
+
+nav a {
+    color: #f59e0b;
+    margin: 0 12px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #ffffff;
+}
+
+main {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+section {
+    background-color: #1e293b;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+article {
+    background-color: #0f172a;
+    border-left: 4px solid #7c3aed;
+    padding: 15px 20px;
+    margin: 15px 0;
+    border-radius: 4px;
+    text-align: left;
+}
+
+aside {
+    background-color: #0f172a;
+    border-left: 4px solid #f59e0b;
+    padding: 15px 20px;
+    margin: 15px 0;
+    border-radius: 4px;
+    text-align: left;
+}
+
+aside ul {
+    padding-left: 20px;
+}
+
+footer {
+    background-color: #1e293b;
+    border-top: 3px solid #7c3aed;
+    padding: 20px;
+    margin-top: 40px;
+    font-size: 0.9em;
+    color: #94a3b8;
+}
+
