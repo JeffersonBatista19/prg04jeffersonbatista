@@ -43,15 +43,45 @@ nav {
     margin-top: 12px;
 }
 
-nav a {
-    color: #f59e0b;
-    margin: 0 12px;
-    text-decoration: none;
-    font-weight: bold;
+/* === Menu de Navegação - Atividade 08 === */
+
+nav#menu ul {
+    list-style: none;       /* Remove os marcadores */
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;        /* Quebra linha em telas pequenas */
+    gap: 4px;
 }
 
-nav a:hover {
-    color: #ffffff;
+nav#menu li {
+    display: inline-block;
+    background-color: #1e3a5f;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+nav#menu li:hover {
+    background-color: #f59e0b;
+}
+
+nav#menu a {
+    color: #f59e0b;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.85em;
+}
+
+nav#menu a:hover {
+    color: #0f172a;
+    text-decoration: underline;
+}
+
+nav#menu h1 {
+    display: none; /* Esconde título interno se houver */
 }
 
 main {
@@ -98,3 +128,65 @@ footer {
     color: #94a3b8;
 }
 
+
+/* === Responsividade - Atividade 08 === */
+
+/* Telas médias: tablet (até 768px) */
+@media (max-width: 768px) {
+
+    header {
+        padding: 15px 10px;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+
+    main {
+        padding: 0 12px;
+        margin: 20px auto;
+    }
+
+    section {
+        padding: 15px;
+    }
+
+    article, aside {
+        padding: 12px 15px;
+    }
+
+    nav#menu ul {
+        flex-direction: column;  /* Menu vira coluna */
+        align-items: center;
+    }
+
+    nav#menu li {
+        width: 80%;
+        text-align: center;
+    }
+}
+
+/* Telas pequenas: celular (até 480px) */
+@media (max-width: 480px) {
+
+    h1 {
+        font-size: 1.2em;
+    }
+
+    h2 {
+        font-size: 1em;
+    }
+
+    main {
+        padding: 0 8px;
+    }
+
+    nav#menu li {
+        width: 100%;
+    }
+
+    footer {
+        font-size: 0.8em;
+        padding: 15px 10px;
+    }
+}
