@@ -129,7 +129,24 @@ footer {
 }
 
 
-/* === Responsividade - Atividade 08 === */
+/* === Login Button === */
+nav#menu li#nav-login {
+    background-color: #7c3aed;
+}
+
+nav#menu li#nav-login:hover {
+    background-color: #5b21b6;
+}
+
+nav#menu li#nav-login a {
+    color: #ffffff;
+}
+
+nav#menu li#nav-login a:hover {
+    color: #ffffff;
+    text-decoration: none;
+}
+
 
 /* Telas médias: tablet (até 768px) */
 @media (max-width: 768px) {

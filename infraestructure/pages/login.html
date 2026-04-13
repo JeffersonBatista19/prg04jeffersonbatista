@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <title>Login — Atividade 08</title>
+    <style>
+        .login-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 60vh;
+        }
+
+        .login-box {
+            background-color: #1e293b;
+            border-radius: 10px;
+            padding: 40px 36px;
+            width: 100%;
+            max-width: 420px;
+            border-top: 4px solid #7c3aed;
+        }
+
+        .login-box h2 {
+            margin-top: 0;
+            margin-bottom: 6px;
+            font-size: 1.6em;
+        }
+
+        .login-box p.subtitulo {
+            color: #94a3b8;
+            font-size: 0.9em;
+            margin-bottom: 28px;
+        }
+
+        .campo {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .campo label {
+            display: block;
+            font-size: 0.85em;
+            font-weight: bold;
+            color: #cbd5e1;
+            margin-bottom: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .campo input {
+            width: 100%;
+            padding: 10px 14px;
+            background-color: #0f172a;
+            border: 1.5px solid #334155;
+            border-radius: 6px;
+            color: #e2e8f0;
+            font-size: 1em;
+            box-sizing: border-box;
+            transition: border-color 0.2s;
+        }
+
+        .campo input:focus {
+            outline: none;
+            border-color: #7c3aed;
+        }
+
+        .campo input.invalido {
+            border-color: #ef4444;
+        }
+
+        .erro-msg {
+            color: #ef4444;
+            font-size: 0.8em;
+            margin-top: 5px;
+            display: none;
+        }
+
+        .erro-msg.visivel {
+            display: block;
+        }
+
+        .btn-entrar {
+            width: 100%;
+            padding: 12px;
+            background-color: #7c3aed;
+            color: #ffffff;
+            border: none;
+            border-radius: 6px;
+            font-size: 1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            margin-top: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .btn-entrar:hover {
+            background-color: #5b21b6;
+        }
+
+        .voltar {
+            display: block;
+            text-align: center;
+            margin-top: 18px;
+            font-size: 0.85em;
+            color: #94a3b8;
+        }
+
+        .voltar a {
+            color: #f59e0b;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Meu Projeto de Web</h1>
+        <p>Desenvolvido por Jefferson Batista — PRG04</p>
+        <nav id="menu">
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="atividade-03.html">Atividade 03</a></li>
+                <li><a href="sandbox.html">Sandbox</a></li>
+                <li><a href="paleta-de-cores.html">Paleta de Cores</a></li>
+                <li id="nav-login"><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="login-wrapper">
+            <div class="login-box">
+                <h2>Acessar o Sistema</h2>
+                <p class="subtitulo">Informe suas credenciais para continuar.</p>
+
+                <div class="campo">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com">
+                    <span class="erro-msg" id="erro-email">Informe um e-mail válido.</span>
+                </div>
+
+                <div class="campo">
+                    <label for="senha">Senha</label>
+                    <input type="password" id="senha" name="senha" placeholder="Digite sua senha">
+                    <span class="erro-msg" id="erro-senha">A senha é obrigatória.</span>
+                </div>
+
+                <button class="btn-entrar" onclick="fazerLogin()">Entrar</button>
+
+                <span class="voltar"><a href="index.html">← Voltar para o início</a></span>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Projeto desenvolvido por <strong>Jefferson Batista</strong> — IFBA Campus Irecê</p>
+        <p>Disciplina: Programação Web | Professor: Jonatas Bastos</p>
+    </footer>
+
+    <script>
+        function fazerLogin() {
+            const emailInput = document.getElementById('email');
+            const senhaInput = document.getElementById('senha');
+            const erroEmail = document.getElementById('erro-email');
+            const erroSenha = document.getElementById('erro-senha');
+
+            let valido = true;
+
+            // Limpa erros anteriores
+            emailInput.classList.remove('invalido');
+            senhaInput.classList.remove('invalido');
+            erroEmail.classList.remove('visivel');
+            erroSenha.classList.remove('visivel');
+
+            // Validação do e-mail
+            const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (emailInput.value.trim() === '' || !regexEmail.test(emailInput.value.trim())) {
+                emailInput.classList.add('invalido');
+                erroEmail.classList.add('visivel');
+                erroEmail.textContent = emailInput.value.trim() === ''
+                    ? 'O e-mail é obrigatório.'
+                    : 'Informe um e-mail válido.';
+                valido = false;
+            }
+
+            // Validação da senha
+            if (senhaInput.value.trim() === '') {
+                senhaInput.classList.add('invalido');
+                erroSenha.classList.add('visivel');
+                valido = false;
+            }
+
+            if (valido) {
+                window.location.href = 'admin.html';
+            }
+        }
+    </script>
+
+</body>
+</html>
