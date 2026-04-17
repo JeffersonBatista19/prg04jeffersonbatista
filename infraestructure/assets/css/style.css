@@ -1,5 +1,21 @@
+/* =====================================================
+   style.css — PRG04 | Jefferson Batista
+   Abordagem: Mobile First
+   Breakpoints:
+     Base        → smartphones (até 600px)
+     @min 601px  → tablets
+     @min 1025px → desktops
+   ===================================================== */
+
+/* ─── RESET / BASE ─────────────────────────────────── */
+
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: Arial, sans-serif;
+    font-size: 0.95rem;
     background-color: #0f172a;
     color: #e2e8f0;
     text-align: center;
@@ -7,59 +23,67 @@ body {
     padding: 0;
 }
 
+/* ─── TIPOGRAFIA BASE (mobile) ──────────────────────── */
+
 h1 {
+    font-size: 1.3rem;
     color: #f59e0b;
+    margin: 0 0 6px;
 }
 
 h2 {
-    color:#7c3aed;
+    font-size: 1.05rem;
+    color: #7c3aed;
 }
 
 a {
-    color:#2b4dab;
+    color: #2b4dab;
 }
 
 p {
-    color:#fbfbfb;
+    color: #fbfbfb;
+    line-height: 1.5;
 }
 
 li {
-    color:#fbfbfb;
+    color: #fbfbfb;
 }
 
 audio, iframe {
     margin-top: 20px;
+    width: 100%;
 }
 
-/* === Tags Semânticas - Atividade 07 === */
+/* ─── HEADER (mobile) ───────────────────────────────── */
 
 header {
     background-color: #1e293b;
-    padding: 20px;
+    padding: 14px 12px;
     border-bottom: 3px solid #f59e0b;
 }
 
+/* ─── NAVEGAÇÃO (mobile) — coluna, itens empilhados ─── */
+
 nav {
-    margin-top: 12px;
+    margin-top: 10px;
 }
 
-/* === Menu de Navegação - Atividade 08 === */
-
 nav#menu ul {
-    list-style: none;       /* Remove os marcadores */
+    list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;        /* Quebra linha em telas pequenas */
-    gap: 4px;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
 }
 
 nav#menu li {
-    display: inline-block;
     background-color: #1e3a5f;
-    padding: 8px 16px;
+    padding: 10px 16px;
     border-radius: 4px;
+    width: 100%;
+    text-align: center;
     transition: background-color 0.3s;
 }
 
@@ -72,7 +96,8 @@ nav#menu a {
     text-decoration: none;
     font-weight: bold;
     text-transform: uppercase;
-    font-size: 0.85em;
+    font-size: 0.82rem;
+    display: block;
 }
 
 nav#menu a:hover {
@@ -80,56 +105,6 @@ nav#menu a:hover {
     text-decoration: underline;
 }
 
-nav#menu h1 {
-    display: none; /* Esconde título interno se houver */
-}
-
-main {
-    max-width: 900px;
-    margin: 30px auto;
-    padding: 0 20px;
-}
-
-section {
-    background-color: #1e293b;
-    border-radius: 8px;
-    padding: 20px;
-    margin-bottom: 30px;
-}
-
-article {
-    background-color: #0f172a;
-    border-left: 4px solid #7c3aed;
-    padding: 15px 20px;
-    margin: 15px 0;
-    border-radius: 4px;
-    text-align: left;
-}
-
-aside {
-    background-color: #0f172a;
-    border-left: 4px solid #f59e0b;
-    padding: 15px 20px;
-    margin: 15px 0;
-    border-radius: 4px;
-    text-align: left;
-}
-
-aside ul {
-    padding-left: 20px;
-}
-
-footer {
-    background-color: #1e293b;
-    border-top: 3px solid #7c3aed;
-    padding: 20px;
-    margin-top: 40px;
-    font-size: 0.9em;
-    color: #94a3b8;
-}
-
-
-/* === Login Button === */
 nav#menu li#nav-login {
     background-color: #7c3aed;
 }
@@ -147,63 +122,159 @@ nav#menu li#nav-login a:hover {
     text-decoration: none;
 }
 
+/* ─── MAIN / LAYOUT (mobile) ────────────────────────── */
 
-/* Telas médias: tablet (até 768px) */
-@media (max-width: 768px) {
-
-    header {
-        padding: 15px 10px;
-    }
-
-    h1 {
-        font-size: 1.5em;
-    }
-
-    main {
-        padding: 0 12px;
-        margin: 20px auto;
-    }
-
-    section {
-        padding: 15px;
-    }
-
-    article, aside {
-        padding: 12px 15px;
-    }
-
-    nav#menu ul {
-        flex-direction: column;  /* Menu vira coluna */
-        align-items: center;
-    }
-
-    nav#menu li {
-        width: 80%;
-        text-align: center;
-    }
+main {
+    width: 100%;
+    margin: 20px auto;
+    padding: 0 12px;
 }
 
-/* Telas pequenas: celular (até 480px) */
-@media (max-width: 480px) {
+section {
+    background-color: #1e293b;
+    border-radius: 8px;
+    padding: 14px;
+    margin-bottom: 20px;
+}
+
+article {
+    background-color: #0f172a;
+    border-left: 4px solid #7c3aed;
+    padding: 12px 14px;
+    margin: 12px 0;
+    border-radius: 4px;
+    text-align: left;
+}
+
+aside {
+    background-color: #0f172a;
+    border-left: 4px solid #f59e0b;
+    padding: 12px 14px;
+    margin: 12px 0;
+    border-radius: 4px;
+    text-align: left;
+}
+
+aside ul {
+    padding-left: 18px;
+}
+
+/* ─── FOOTER (mobile) ───────────────────────────────── */
+
+footer {
+    background-color: #1e293b;
+    border-top: 3px solid #7c3aed;
+    padding: 14px 12px;
+    margin-top: 30px;
+    font-size: 0.8rem;
+    color: #94a3b8;
+}
+
+/* =====================================================
+   TABLET — @media (min-width: 601px) and (max-width: 1024px)
+   ===================================================== */
+
+@media (min-width: 601px) and (max-width: 1024px) {
+
+    body {
+        font-size: 1rem;
+    }
 
     h1 {
-        font-size: 1.2em;
+        font-size: 1.6rem;
     }
 
     h2 {
-        font-size: 1em;
+        font-size: 1.15rem;
     }
 
-    main {
-        padding: 0 8px;
+    header {
+        padding: 18px 20px;
+    }
+
+    nav#menu ul {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 6px;
     }
 
     nav#menu li {
-        width: 100%;
+        width: auto;
+    }
+
+    main {
+        max-width: 720px;
+        padding: 0 16px;
+        margin: 24px auto;
+    }
+
+    section {
+        padding: 18px;
+    }
+
+    article, aside {
+        padding: 14px 18px;
     }
 
     footer {
-        font-size: 0.8em;
-        padding: 15px 10px;
+        font-size: 0.85rem;
+        padding: 18px 20px;
+    }
+}
+
+/* =====================================================
+   DESKTOP — @media (min-width: 1025px)
+   ===================================================== */
+
+@media (min-width: 1025px) {
+
+    body {
+        font-size: 1rem;
+    }
+
+    h1 {
+        font-size: 1.9rem;
+    }
+
+    h2 {
+        font-size: 1.25rem;
+    }
+
+    header {
+        padding: 20px 30px;
+    }
+
+    nav#menu ul {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 6px;
+    }
+
+    nav#menu li {
+        width: auto;
+    }
+
+    main {
+        max-width: 900px;
+        padding: 0 20px;
+        margin: 30px auto;
+    }
+
+    section {
+        padding: 20px;
+        margin-bottom: 30px;
+    }
+
+    article, aside {
+        padding: 15px 20px;
+        margin: 15px 0;
+    }
+
+    footer {
+        font-size: 0.9rem;
+        padding: 20px;
+        margin-top: 40px;
     }
 }
