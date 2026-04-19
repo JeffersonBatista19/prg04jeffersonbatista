@@ -4,84 +4,104 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="Uiconstock-Dynamic-Flat-Android-Game.256.ico" type="image/x-icon">
-    <!-- link CSS externo -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../assets/css/style.css">
-    <title>Atividade 07</title>
+    <title>Início — PRG04</title>
 </head>
 <body>
 
-    <!-- Cabeçalho principal da página -->
-    <header>
-        <h1>Meu Projeto de Web</h1>
-        <p>Desenvolvido por Jefferson Batista — PRG04</p>
-
-        <!-- Menu de navegação -->
-        <nav id="menu">
-            <ul>
-                <li><a href="index.html">Início</a></li>
-                <li><a href="atividade-03.html">Atividade 03</a></li>
-                <li><a href="sandbox.html">Sandbox</a></li>
-                <li><a href="paleta-de-cores.html">Paleta de Cores</a></li>
-                <li id="nav-login"><a href="login.html">Login</a></li>
-            </ul>
-        </nav>
-    </header>
+    <!-- Navbar Bootstrap -->
+    <nav class="navbar navbar-expand-md navbar-dark" style="background-color:#1e293b; border-bottom:3px solid #f59e0b;">
+        <div class="container">
+            <a class="navbar-brand fw-bold" style="color:#f59e0b;" href="index.html">Meu Projeto de Web</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"
+                aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav ms-auto gap-1">
+                    <li class="nav-item"><a class="nav-link text-warning fw-bold" href="index.html">Início</a></li>
+                    <li class="nav-item"><a class="nav-link text-warning fw-bold" href="atividade-03.html">Atividade 03</a></li>
+                    <li class="nav-item"><a class="nav-link text-warning fw-bold" href="sandbox.html">Sandbox</a></li>
+                    <li class="nav-item"><a class="nav-link text-warning fw-bold" href="paleta-de-cores.html">Paleta de Cores</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-bold text-white px-3 rounded" style="background-color:#7c3aed;" href="login.html">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
     <!-- Conteúdo principal -->
-    <main>
+    <main class="container my-4">
 
-        <!-- Seção de apresentação do projeto -->
-        <section>
-            <h2>Sobre o Projeto</h2>
-
-            <!-- Artigo com conteúdo independente -->
-            <article>
-                <h2>Olá, Mundo!</h2>
-                <p>Aqui nasce meu projeto de Web. Este projeto foi desenvolvido ao longo das aulas de PRG04 - Desenvolvimento Web.</p>
-                <p>Ao longo das atividades, aprendi sobre HTML semântico, CSS, seletores avançados, pseudo-classes, pseudo-elementos e o modelo de caixas.</p>
-            </article>
-
-            <!-- Aside: conteúdo complementar / links das atividades -->
-            <aside>
-                <h2>Atividades</h2>
-                <p>Acesse as atividades desenvolvidas:</p>
-                <ul>
-                    <li><a href="atividade-03.html">Atividade 03</a></li>
-                    <li><a href="sandbox.html">Atividade 04 - Sandbox</a></li>
-                    <li><a href="paleta-de-cores.html">Atividade 05 - Paleta de Cores</a></li>
-                </ul>
-            </aside>
-
+        <!-- Seção sobre o projeto -->
+        <section class="mb-4">
+            <h2 class="mb-3">Sobre o Projeto</h2>
+            <div class="row g-3">
+                <div class="col-12 col-md-8">
+                    <div class="card h-100 text-white border-0" style="background-color:#1e293b; border-left:4px solid #7c3aed !important;">
+                        <div class="card-body">
+                            <h5 class="card-title" style="color:#7c3aed;">Olá, Mundo!</h5>
+                            <p class="card-text">Aqui nasce meu projeto de Web. Este projeto foi desenvolvido ao longo das aulas de PRG04 - Desenvolvimento Web.</p>
+                            <p class="card-text">Ao longo das atividades, aprendi sobre HTML semântico, CSS, seletores avançados, pseudo-classes, pseudo-elementos e o modelo de caixas.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="card h-100 text-white border-0" style="background-color:#1e293b; border-left:4px solid #f59e0b !important;">
+                        <div class="card-body">
+                            <h5 class="card-title" style="color:#f59e0b;">Atividades</h5>
+                            <p class="card-text">Acesse as atividades desenvolvidas:</p>
+                            <ul class="list-unstyled">
+                                <li><a href="atividade-03.html" class="text-warning">→ Atividade 03</a></li>
+                                <li><a href="sandbox.html" class="text-warning">→ Atividade 04 - Sandbox</a></li>
+                                <li><a href="paleta-de-cores.html" class="text-warning">→ Atividade 05 - Paleta de Cores</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
-        <!-- Segunda seção: conteúdos vistos em aula -->
+        <!-- Seção habilidades — cards Bootstrap -->
         <section>
-            <h2>Habilidades Desbloqueadas</h2>
-
-            <article>
-                <h2>Precisão de Mira</h2>
-                <p>Assim como um bom jogador mira com precisão, os seletores CSS avançados permitem atingir exatamente o elemento certo — por posição, hierarquia ou atributo.</p>
-            </article>
-
-            <article>
-                <h2>Buffs e Efeitos Visuais</h2>
-                <p>Pseudo-classes como <strong> hover</strong> funcionam como buffs: ativam efeitos quando o jogador interage. Pseudo-elementos como <strong>::before</strong> e <strong>::after</strong> adicionam detalhes visuais sem poluir o HTML.</p>
-            </article>
-
-            <article>
-                <h2>Construindo o Mapa</h2>
-                <p>Todo elemento HTML é uma caixa — como os blocos de um mapa. Cada camada (content, padding, border, margin) define o espaço que aquele bloco ocupa no mundo.</p>
-            </article>
-
+            <h2 class="mb-3">Habilidades Desbloqueadas</h2>
+            <div class="row g-3">
+                <div class="col-12 col-md-4">
+                    <div class="card h-100 text-white border-0" style="background-color:#1e293b; border-left:4px solid #7c3aed !important;">
+                        <div class="card-body">
+                            <h5 class="card-title" style="color:#7c3aed;">🎯 Precisão de Mira</h5>
+                            <p class="card-text">Assim como um bom jogador mira com precisão, os seletores CSS avançados permitem atingir exatamente o elemento certo — por posição, hierarquia ou atributo.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="card h-100 text-white border-0" style="background-color:#1e293b; border-left:4px solid #7c3aed !important;">
+                        <div class="card-body">
+                            <h5 class="card-title" style="color:#7c3aed;">✨ Buffs e Efeitos Visuais</h5>
+                            <p class="card-text">Pseudo-classes como <strong>:hover</strong> funcionam como buffs: ativam efeitos quando o jogador interage. Pseudo-elementos como <strong>::before</strong> e <strong>::after</strong> adicionam detalhes sem poluir o HTML.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="card h-100 text-white border-0" style="background-color:#1e293b; border-left:4px solid #7c3aed !important;">
+                        <div class="card-body">
+                            <h5 class="card-title" style="color:#7c3aed;">🗺️ Construindo o Mapa</h5>
+                            <p class="card-text">Todo elemento HTML é uma caixa — como os blocos de um mapa. Cada camada (content, padding, border, margin) define o espaço que aquele bloco ocupa no mundo.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
     </main>
 
-    <!-- Rodapé da página -->
-    <footer>
-        <p>Projeto desenvolvido por <strong>Jefferson Batista</strong> — IFBA Campus Irecê</p>
-        <p>Disciplina: Programação Web | Professor: Jonatas Bastos</p>
+    <footer class="text-center py-3 mt-4" style="background-color:#1e293b; border-top:3px solid #7c3aed; color:#94a3b8; font-size:0.9rem;">
+        <p class="mb-0">Projeto desenvolvido por <strong class="text-white">Jefferson Batista</strong> — IFBA Campus Irecê</p>
+        <p class="mb-0">Disciplina: Programação Web | Professor: Jonatas Bastos</p>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -3,163 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../assets/css/style.css">
-    <title>Login — Atividade 08</title>
+    <title>Login — PRG04</title>
     <style>
-        .login-wrapper {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 60vh;
-        }
-
-        .login-box {
-            background-color: #1e293b;
-            border-radius: 10px;
-            padding: 40px 36px;
-            width: 100%;
-            max-width: 420px;
-            border-top: 4px solid #7c3aed;
-        }
-
-        .login-box h2 {
-            margin-top: 0;
-            margin-bottom: 6px;
-            font-size: 1.6em;
-        }
-
-        .login-box p.subtitulo {
-            color: #94a3b8;
-            font-size: 0.9em;
-            margin-bottom: 28px;
-        }
-
-        .campo {
-            margin-bottom: 20px;
-            text-align: left;
-        }
-
-        .campo label {
-            display: block;
-            font-size: 0.85em;
-            font-weight: bold;
-            color: #cbd5e1;
-            margin-bottom: 6px;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        .campo input {
-            width: 100%;
-            padding: 10px 14px;
-            background-color: #0f172a;
-            border: 1.5px solid #334155;
-            border-radius: 6px;
-            color: #e2e8f0;
-            font-size: 1em;
-            box-sizing: border-box;
-            transition: border-color 0.2s;
-        }
-
-        .campo input:focus {
-            outline: none;
-            border-color: #7c3aed;
-        }
-
         .campo input.invalido {
-            border-color: #ef4444;
+            border-color: #ef4444 !important;
+            box-shadow: 0 0 0 0.2rem rgba(239,68,68,.25) !important;
         }
-
-        .erro-msg {
-            color: #ef4444;
-            font-size: 0.8em;
-            margin-top: 5px;
-            display: none;
-        }
-
-        .erro-msg.visivel {
-            display: block;
-        }
-
-        .btn-entrar {
-            width: 100%;
-            padding: 12px;
-            background-color: #7c3aed;
-            color: #ffffff;
-            border: none;
-            border-radius: 6px;
-            font-size: 1em;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background-color 0.2s;
-            margin-top: 8px;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        .btn-entrar:hover {
-            background-color: #5b21b6;
-        }
-
-        .voltar {
-            display: block;
-            text-align: center;
-            margin-top: 18px;
-            font-size: 0.85em;
-            color: #94a3b8;
-        }
-
-        .voltar a {
-            color: #f59e0b;
-        }
+        .erro-msg { color: #ef4444; font-size: 0.8em; display: none; margin-top: 4px; }
+        .erro-msg.visivel { display: block; }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>Meu Projeto de Web</h1>
-        <p>Desenvolvido por Jefferson Batista — PRG04</p>
-        <nav id="menu">
-            <ul>
-                <li><a href="index.html">Início</a></li>
-                <li><a href="atividade-03.html">Atividade 03</a></li>
-                <li><a href="sandbox.html">Sandbox</a></li>
-                <li><a href="paleta-de-cores.html">Paleta de Cores</a></li>
-                <li id="nav-login"><a href="login.html">Login</a></li>
-            </ul>
-        </nav>
-    </header>
+    <!-- Navbar Bootstrap -->
+    <nav class="navbar navbar-expand-md navbar-dark" style="background-color:#1e293b; border-bottom:3px solid #f59e0b;">
+        <div class="container">
+            <a class="navbar-brand fw-bold" style="color:#f59e0b;" href="index.html">Meu Projeto de Web</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"
+                aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav ms-auto gap-1">
+                    <li class="nav-item"><a class="nav-link text-warning fw-bold" href="index.html">Início</a></li>
+                    <li class="nav-item"><a class="nav-link text-warning fw-bold" href="atividade-03.html">Atividade 03</a></li>
+                    <li class="nav-item"><a class="nav-link text-warning fw-bold" href="sandbox.html">Sandbox</a></li>
+                    <li class="nav-item"><a class="nav-link text-warning fw-bold" href="paleta-de-cores.html">Paleta de Cores</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-bold text-white px-3 rounded" style="background-color:#7c3aed;" href="login.html">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-    <main>
-        <div class="login-wrapper">
-            <div class="login-box">
-                <h2>Acessar o Sistema</h2>
-                <p class="subtitulo">Informe suas credenciais para continuar.</p>
+    <main class="container my-4">
+        <div class="row justify-content-center">
+            <div class="col-12 col-sm-8 col-md-6 col-lg-5">
+                <div class="p-4 rounded-3" style="background-color:#1e293b; border-top:4px solid #7c3aed;">
+                    <h2 class="mb-1" style="color:#7c3aed;">Acessar o Sistema</h2>
+                    <p class="mb-4" style="color:#94a3b8; font-size:0.9rem;">Informe suas credenciais para continuar.</p>
 
-                <div class="campo">
-                    <label for="email">E-mail</label>
-                    <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com">
-                    <span class="erro-msg" id="erro-email">Informe um e-mail válido.</span>
+                    <div class="mb-3">
+                        <label for="email" class="form-label text-white fw-bold">E-mail</label>
+                        <input type="email" id="email" name="email" class="form-control bg-dark text-white border-secondary"
+                            placeholder="seuemail@exemplo.com">
+                        <span class="erro-msg" id="erro-email">Informe um e-mail válido.</span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="senha" class="form-label text-white fw-bold">Senha</label>
+                        <input type="password" id="senha" name="senha" class="form-control bg-dark text-white border-secondary"
+                            placeholder="Digite sua senha">
+                        <span class="erro-msg" id="erro-senha">A senha é obrigatória.</span>
+                    </div>
+
+                    <button class="btn w-100 fw-bold text-white mt-2" style="background-color:#7c3aed;"
+                        onclick="fazerLogin()">Entrar</button>
+
+                    <div class="text-center mt-3">
+                        <a href="index.html" style="color:#f59e0b; font-size:0.85rem;">← Voltar para o início</a>
+                    </div>
                 </div>
-
-                <div class="campo">
-                    <label for="senha">Senha</label>
-                    <input type="password" id="senha" name="senha" placeholder="Digite sua senha">
-                    <span class="erro-msg" id="erro-senha">A senha é obrigatória.</span>
-                </div>
-
-                <button class="btn-entrar" onclick="fazerLogin()">Entrar</button>
-
-                <span class="voltar"><a href="index.html">← Voltar para o início</a></span>
             </div>
         </div>
     </main>
 
-    <footer>
-        <p>Projeto desenvolvido por <strong>Jefferson Batista</strong> — IFBA Campus Irecê</p>
-        <p>Disciplina: Programação Web | Professor: Jonatas Bastos</p>
+    <footer class="text-center py-3 mt-4" style="background-color:#1e293b; border-top:3px solid #7c3aed; color:#94a3b8; font-size:0.9rem;">
+        <p class="mb-0">Projeto desenvolvido por <strong class="text-white">Jefferson Batista</strong> — IFBA Campus Irecê</p>
+        <p class="mb-0">Disciplina: Programação Web | Professor: Jonatas Bastos</p>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         function fazerLogin() {
             const emailInput = document.getElementById('email');
@@ -169,24 +86,19 @@
 
             let valido = true;
 
-            // Limpa erros anteriores
             emailInput.classList.remove('invalido');
             senhaInput.classList.remove('invalido');
             erroEmail.classList.remove('visivel');
             erroSenha.classList.remove('visivel');
 
-            // Validação do e-mail
             const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (emailInput.value.trim() === '' || !regexEmail.test(emailInput.value.trim())) {
                 emailInput.classList.add('invalido');
                 erroEmail.classList.add('visivel');
-                erroEmail.textContent = emailInput.value.trim() === ''
-                    ? 'O e-mail é obrigatório.'
-                    : 'Informe um e-mail válido.';
+                erroEmail.textContent = emailInput.value.trim() === '' ? 'O e-mail é obrigatório.' : 'Informe um e-mail válido.';
                 valido = false;
             }
 
-            // Validação da senha
             if (senhaInput.value.trim() === '') {
                 senhaInput.classList.add('invalido');
                 erroSenha.classList.add('visivel');
@@ -198,6 +110,5 @@
             }
         }
     </script>
-
 </body>
 </html>
